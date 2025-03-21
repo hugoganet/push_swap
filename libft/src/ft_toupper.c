@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/21 13:08:24 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/21 14:09:28 by hganet           ###   ########.fr       */
+/*   Created: 2024/11/12 17:01:28 by hganet            #+#    #+#             */
+/*   Updated: 2024/11/12 17:05:57 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(int ac, char **av)
+/**
+ * @brief Converts a lower-case letter to the corresponding upper-case letter.
+ * @param c The character to convert.
+ * @return The corresponding upper-case letter.
+ */
+int	ft_toupper(int c)
 {
-	char	**split_args;
-	
-	if (ac == 2)
-	{
-		split_args = ft_split(av[1], ' ');
-	}
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	else
+		return (c);
 }

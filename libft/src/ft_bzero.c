@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/21 13:08:24 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/21 14:09:28 by hganet           ###   ########.fr       */
+/*   Created: 2024/11/20 15:48:07 by hganet            #+#    #+#             */
+/*   Updated: 2024/12/03 11:10:19 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(int ac, char **av)
+#include "libft.h"
+
+/**
+ * @brief The bzero() function writes n zeroed bytes to the string s.
+ * 				If n is zero, bzero() does nothing.
+ * @param s The pointer to the string to be zeroed.
+ * @param n The number of bytes to be zeroed.
+ * @return void
+ */
+void	ft_bzero(void *s, size_t n)
 {
-	char	**split_args;
-	
-	if (ac == 2)
-	{
-		split_args = ft_split(av[1], ' ');
-	}
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+		((char *)s)[i++] = '\0';
 }

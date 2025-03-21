@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   f_isascii.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/21 13:08:24 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/21 14:09:28 by hganet           ###   ########.fr       */
+/*   Created: 2024/11/12 16:41:15 by hganet            #+#    #+#             */
+/*   Updated: 2024/11/12 16:48:44 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(int ac, char **av)
+/**
+ * @brief The isascii() function tests for an ASCII character,
+ * 				which is any character between 0 and octal 0177 inclusive.
+ * @param c The character to test
+ * @return The function returns zero if the character tests false
+ * 				 and returns non-zero if the character tests true.
+ */
+int	ft_isascii(int c)
 {
-	char	**split_args;
-	
-	if (ac == 2)
-	{
-		split_args = ft_split(av[1], ' ');
-	}
+	if (c >= 0 && c <= 127)
+		return (1);
+	else
+		return (0);
 }

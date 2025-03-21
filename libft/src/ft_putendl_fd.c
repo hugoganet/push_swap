@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/21 13:08:24 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/21 14:09:28 by hganet           ###   ########.fr       */
+/*   Created: 2024/11/29 13:36:04 by hganet            #+#    #+#             */
+/*   Updated: 2024/12/01 15:57:57 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(int ac, char **av)
+#include "libft.h"
+
+/**
+ * @brief Output the string 's' to the given file descriptor
+ * 		  followed by a newline.
+ * @param s The string to output.
+ * @param fd The file descriptor on which to write.
+ */
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	**split_args;
-	
-	if (ac == 2)
-	{
-		split_args = ft_split(av[1], ' ');
-	}
+	int	i;
+
+	if (!s || fd < 0)
+		return ;
+	i = 0;
+	while (s[i])
+		write(fd, &s[i++], 1);
+	write(fd, "\n", 1);
 }
