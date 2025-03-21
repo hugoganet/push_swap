@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_args.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/21 13:08:24 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/21 15:42:25 by hganet           ###   ########.fr       */
+/*   Created: 2025/03/21 15:21:55 by hganet            #+#    #+#             */
+/*   Updated: 2025/03/21 15:22:00 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <stdlib.h>
 
-#include "push_swap.h"
-
-int main(int ac, char **av)
+/**
+ * Frees a NULL-terminated array of strings.
+ *
+ * @param args The array of strings to free.
+ */
+void free_args(char **args)
 {
-	t_node *stack_a;
+	int i;
 
-	if (ac < 2)
-		return (0);
-	stack_a = parse_args(ac, av);
-	// TODO: use stack_a for sorting, then free it
-	return (0);
+	if (!args)
+		return;
+	i = 0;
+	while (args[i])
+	{
+		free(args[i]);
+		i++;
+	}
+	free(args);
 }
