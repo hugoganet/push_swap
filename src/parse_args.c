@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:46:38 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/21 17:30:01 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/21 18:23:29 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,23 @@ int is_duplicate(t_node *stack, int value)
 }
 
 /**
+ * @brief Returns the list of argument tokens from av.
+ *
+ * If there is only one argument (quoted string), splits it.
+ * Otherwise, returns av + 1.
+ *
+ * @param ac Argument count.
+ * @param av Argument vector.
+ * @return A NULL-terminated string array of tokens.
+ */
+char **get_args(int ac, char **av)
+{
+	if (ac == 2)
+		return (ft_split(av[1], ' '));
+	return (av + 1);
+}
+
+/**
  * @brief Parses command-line arguments and builds the initial stack.
  *
  * Supports two formats: multiple args or one quoted string.
@@ -55,7 +72,7 @@ t_node *parse_args(int ac, char **av)
 	t_node *stack;
 
 	stack = NULL;
-	args = (ac == 2) ? ft_split(av[1], ' ') : av + 1;
+	args = get_args(ac, av);
 	if (!args || !args[0])
 		return (free_args(args), error_exit(), NULL);
 	i = 0;
