@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:21:31 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 14:31:05 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/24 16:16:11 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,22 @@ int find_position(t_node *stack, int target)
 		stack = stack->next;
 	}
 	return (pos);
+}
+
+/**
+ * @brief Get the size of a stack
+ *
+ * @param stack The stack to get the size of
+ */
+int stack_size(t_node *stack)
+{
+	int size;
+
+	size = 0;
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
 }

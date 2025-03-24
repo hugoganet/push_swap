@@ -16,10 +16,12 @@ CFLAGS		= -Wall -Wextra -Werror -Iinclude -I$(LIBFT_DIR)/includes
 # Source files
 SRC_FILES	= \
 		main.c \
+		indexing/normalize_stack.c \
 		memory_and_errors/error_exit.c \
 		memory_and_errors/free.c \
 		parsing/ft_atoi_safe.c \
 		parsing/parse_args.c \
+		sorting_operations/bubble_sort.c \
 		sorting_operations/helper_functions.c \
 		sorting_operations/sort_2_to_5_elements.c \
 		stack_operations/push_operations.c \

@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:10:20 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 14:09:53 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/24 16:16:00 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,14 @@ typedef struct s_node
 	struct s_node *next;
 } t_node;
 
+// ##### indexing #####
+int find_index(int *sorted, int size, int value);
+void fill_array_from_stack(t_node *stack, int *arr);
+void normalize_stack(t_node *stack);
+
 // ##### memory_and_errors #####
 void error_exit(void);
-	// free.c
+// free.c
 void free_args(char **args);
 void free_stack(t_node *stack);
 
@@ -55,11 +60,15 @@ void sa(t_node *stack);
 
 // ##### sorting_operations #####
 	// helper_functions.c
-	int find_min_value(t_node *stack);
+int find_min_value(t_node *stack);
 int find_position(t_node *stack, int target);
-	// sort_2_to_5_elements.c
+int stack_size(t_node *stack);
+
+// sort_2_to_5_elements.c
 void sort_two(t_node **a);
 void sort_three(t_node **a);
 void sort_four(t_node **a, t_node **b);
 void sort_five(t_node **a, t_node **b);
+	// bubble_sort.c
+void bubble_sort(int *arr, int size);
 #endif
