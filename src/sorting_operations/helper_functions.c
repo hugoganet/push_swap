@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:21:31 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 16:16:11 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/24 18:03:23 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,26 @@ int find_min_value(t_node *stack)
 		stack = stack->next;
 	}
 	return (min);
+}
+
+/**
+ * @brief Returns the largest value in a stack.
+ *
+ * @param stack The stack to search.
+ * @return The maximum integer value found.
+ */
+int find_max_value(t_node *stack)
+{
+	int max;
+
+	max = stack->value;
+	while (stack)
+	{
+		if (stack->value > max)
+			max = stack->value;
+		stack = stack->next;
+	}
+	return (max);
 }
 
 /**

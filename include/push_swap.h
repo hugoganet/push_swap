@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:10:20 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 16:16:00 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/24 18:14:04 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,26 @@ typedef struct s_node
 	int value;
 	struct s_node *next;
 } t_node;
+
+/**
+ * @brief Represents a chunk range with a lower and upper bound.
+ */
+typedef struct s_chunk
+{
+	int low;
+	int high;
+} t_chunk;
+
+// ##### chunk_operations #####
+	// generate_chunks.c
+t_chunk *generate_chunks(int size, int chunk_count);
+	// process_chunks.c
+void process_chunks(t_node **a, t_node **b, t_chunk *chunks, int chunk_count);
+void push_back_to_a(t_node **a, t_node **b);
+	// push_one_chunk.c
+int in_chunk(int value, t_chunk chunk);
+int count_in_chunk(t_node *stack, t_chunk chunk);
+void push_chunk_to_b(t_node **a, t_node **b, t_chunk chunk);
 
 // ##### indexing #####
 int find_index(int *sorted, int size, int value);
@@ -55,12 +75,15 @@ void pa(t_node **a, t_node **b);
 	// rotate_operations.c
 void ra(t_node **stack);
 void rra(t_node **stack);
-	// swap_operations.c
+void rb(t_node **stack);
+void rrb(t_node **stack);
+// swap_operations.c
 void sa(t_node *stack);
 
 // ##### sorting_operations #####
 	// helper_functions.c
 int find_min_value(t_node *stack);
+int find_max_value(t_node *stack);
 int find_position(t_node *stack, int target);
 int stack_size(t_node *stack);
 

@@ -16,6 +16,9 @@ CFLAGS		= -Wall -Wextra -Werror -Iinclude -I$(LIBFT_DIR)/includes
 # Source files
 SRC_FILES	= \
 		main.c \
+		chunk_operations/generate_chunks.c\
+		chunk_operations/process_chunks.c\
+		chunk_operations/process_one_chunk.c\
 		indexing/normalize_stack.c \
 		memory_and_errors/error_exit.c \
 		memory_and_errors/free.c \
