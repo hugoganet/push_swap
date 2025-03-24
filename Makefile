@@ -1,84 +1,65 @@
 # **************************************************************************** #
-#                                MAKEFILE                                     #
+#                                MAKEFILE                                      #
 # **************************************************************************** #
 
-# Name of the final executable
-NAME = push_swap
+NAME		= push_swap
 
-# ==============================================================================
-#                                DIRECTORIES
-# ==============================================================================
+# Directories
+SRC_DIR		= src
+OBJ_DIR		= obj
+LIBFT_DIR	= libft
 
-# Your source files (for push_swap logic)
-SRC_DIR = src
-OBJ_DIR = obj
+# Compiler & Flags
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror -Iinclude -I$(LIBFT_DIR)/includes
 
-# Your libft folder
-LIBFT_DIR = libft
-LIBFT_MAKE = make -C $(LIBFT_DIR)
-LIBFT_CLEAN = make clean -C $(LIBFT_DIR)
-LIBFT_FCLEAN = make fclean -C $(LIBFT_DIR)
-LIBFT = $(LIBFT_DIR)/libft.a
+# Source files
+SRC_FILES	= \
+		main.c \
+		memory_and_errors/error_exit.c \
+		memory_and_errors/free.c \
+		parsing/ft_atoi_safe.c \
+		parsing/parse_args.c \
+		sorting_operations/helper_functions.c \
+		sorting_operations/sort_2_to_5_elements.c \
+		stack_operations/push_operations.c \
+		stack_operations/rotate_operations.c \
+		stack_operations/stack.c \
+		stack_operations/swap_operations.c \
 
-# Header files location
-INCLUDES = -Iinclude -I$(LIBFT_DIR)/includes
+SRCS		= $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+OBJS		= $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
 
-# ==============================================================================
-#                                FILES
-# ==============================================================================
+# Libft
+LIBFT		= $(LIBFT_DIR)/libft.a
 
-# Source files for push_swap
-SRC =	main.c \
-		error_exit.c \
-		free_args.c \
-		parse_args.c \
-		stack.c \
-		ft_atoi_safe.c
-
-# Object files (same names, just different extension and folder)
-OBJS = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
-
-# Compiler and flags
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-
-# ==============================================================================
-#                                RULES
-# ==============================================================================
-
-# Default rule when you run `make`
+# Default rule
 all: $(NAME)
 
-# Rule to build push_swap
+# Executable rule
 $(NAME): $(LIBFT) $(OBJS)
-	@echo "Compiling $(NAME)..."
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
-# Compile object files from .c files
-# $< = source file (.c)
-# $@ = target file (.o)
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
-# Build libft first using its own Makefile
+# Libft rule
 $(LIBFT):
-	@$(LIBFT_MAKE)
+	$(MAKE) -C $(LIBFT_DIR)
 
-# Clean only this project’s object files
+# Create .o from .c with matching folder structure
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Clean object files
 clean:
-	@echo "Cleaning object files..."
-	@rm -rf $(OBJ_DIR)
+	$(MAKE) -C $(LIBFT_DIR) clean
+	rm -rf $(OBJ_DIR)
 
-# Clean this project AND libft’s build files
+# Clean everything
 fclean: clean
-	@echo "Cleaning $(NAME) and libft..."
-	@rm -f $(NAME)
-	@$(LIBFT_FCLEAN)
+	$(MAKE) -C $(LIBFT_DIR) fclean
+	rm -f $(NAME)
 
-# Full rebuild from scratch
+# Rebuild everything
 re: fclean all
-
-# ==============================================================================
 
 .PHONY: all clean fclean re

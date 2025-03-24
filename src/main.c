@@ -6,12 +6,11 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:08:24 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/21 18:27:52 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/24 14:22:54 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 /**
  * @brief Prints the contents of a stack for debugging.
