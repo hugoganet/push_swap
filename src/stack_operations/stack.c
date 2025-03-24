@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 17:45:17 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/21 17:55:11 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/24 13:53:54 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,21 +59,4 @@ void add_back(t_node **stack, t_node *new)
 	temp->next = new;
 }
 
-/**
- * @brief Frees all nodes in a linked list.
- *
- * Traverses the stack and frees each node one by one.
- *
- * @param stack The head of the stack (linked list).
- */
-void free_stack(t_node *stack)
-{
-	t_node *temp;
 
-	while (stack)
-	{
-		temp = stack->next; // Keep the pointer to the next node
-		free(stack); // free the node
-		stack = temp; // give the current node the value of the previous stack->next pointer
-	}
-}

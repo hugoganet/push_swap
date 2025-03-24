@@ -6,12 +6,11 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 10:13:22 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 10:38:32 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/24 14:50:19 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
 
 /**
  * @brief Pushes the top element of stack A to stack B.

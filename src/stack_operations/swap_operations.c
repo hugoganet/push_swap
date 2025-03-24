@@ -6,12 +6,11 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 10:11:34 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 10:12:47 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/24 14:48:48 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
 
 /**
  * @brief Swaps the first two elements of stack A.
