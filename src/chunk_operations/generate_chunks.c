@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:41:52 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 17:44:09 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/25 15:33:56 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,3 +43,4 @@ t_chunk *generate_chunks(int size, int chunk_count)
 	}
 	return (chunks);
 }
+

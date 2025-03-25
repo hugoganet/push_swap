@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:08:24 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/25 14:55:35 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/25 15:38:14 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
 static int	get_chunk_count(int size)
 {
 	if (size <= 100)
-		return (4);
-	return (8);
+		return (5);
+	return (11);
 }
 
 int main(int ac, char **av)

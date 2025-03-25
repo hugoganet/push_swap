@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:10:20 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 18:14:04 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/25 16:55:50 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,9 @@ void add_back(t_node **stack, t_node *new);
 	// push_operations.c
 void pb(t_node **a, t_node **b);
 void pa(t_node **a, t_node **b);
+	// rotate_both_stacks.c
+void rr(t_node **stack_a, t_node **stack_b);
+void rrr(t_node **stack_a, t_node **stack_b);
 	// rotate_operations.c
 void ra(t_node **stack);
 void rra(t_node **stack);
@@ -79,10 +82,12 @@ void rb(t_node **stack);
 void rrb(t_node **stack);
 // swap_operations.c
 void sa(t_node *stack);
+void sb(t_node *stack);
+void ss(t_node *stack_a, t_node *stack_b);
 
 // ##### sorting_operations #####
 	// helper_functions.c
-int find_min_value(t_node *stack);
+	int find_min_value(t_node *stack);
 int find_max_value(t_node *stack);
 int find_position(t_node *stack, int target);
 int stack_size(t_node *stack);

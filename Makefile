@@ -28,6 +28,7 @@ SRC_FILES	= \
 		sorting_operations/helper_functions.c \
 		sorting_operations/sort_2_to_5_elements.c \
 		stack_operations/push_operations.c \
+		stack_operations/rotate_both_stacks.c \
 		stack_operations/rotate_operations.c \
 		stack_operations/stack.c \
 		stack_operations/swap_operations.c \
