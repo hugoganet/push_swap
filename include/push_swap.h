@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:10:20 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/25 16:55:50 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 15:12:54 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_node
 } t_node;
 
 /**
+ * @struct s_chunk
  * @brief Represents a chunk range with a lower and upper bound.
  */
 typedef struct s_chunk
@@ -38,6 +39,7 @@ typedef struct s_chunk
 
 // ##### chunk_operations #####
 	// generate_chunks.c
+int get_chunk_count(int size);
 t_chunk *generate_chunks(int size, int chunk_count);
 	// process_chunks.c
 void process_chunks(t_node **a, t_node **b, t_chunk *chunks, int chunk_count);

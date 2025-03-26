@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 17:45:17 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 13:53:54 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 11:01:10 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ void add_back(t_node **stack, t_node *new)
 		*stack = new;
 		return;
 	}
-	temp = *stack;
-	while (temp->next)
-		temp = temp->next;
+	temp = *stack; // Hold the head
+	while (temp->next) // continue until reaching the tail
+		temp = temp->next; 
 	temp->next = new;
 }
 

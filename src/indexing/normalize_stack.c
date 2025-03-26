@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 16:08:18 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 16:10:09 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 11:55:23 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int find_index(int *sorted, int size, int value)
 {
 	int i = 0;
 
-	while (i < size)
+	while (i < size) 
 	{
 		if (sorted[i] == value)
 			return (i);
@@ -70,15 +70,15 @@ void normalize_stack(t_node *stack)
 	t_node *temp;
 
 	size = stack_size(stack);
-	values = malloc(sizeof(int) * size);
+	values = malloc(sizeof(int) * size); // malloc an array of it for the indexes
 	if (!values)
 		error_exit();
-	fill_array_from_stack(stack, values);
-	bubble_sort(values, size);
+	fill_array_from_stack(stack, values); // fill the int array with the stack values (the arguments) 
+	bubble_sort(values, size); // sort the array of arguments
 	temp = stack;
-	while (temp)
+	while (temp) // loop on every node of the stack
 	{
-		temp->value = find_index(values, size, temp->value);
+		temp->value = find_index(values, size, temp->value); // replace the value with it's index in the sorted array
 		temp = temp->next;
 	}
 	free(values);

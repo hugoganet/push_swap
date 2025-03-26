@@ -6,14 +6,27 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:46:38 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/21 18:23:29 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 11:18:56 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <limits.h>
-#include <stdlib.h>
-#include <unistd.h>
+
+/**
+ * @brief Handles invalid argument cases in parse_args.
+ *
+ * Frees args if needed, exits the program with error.
+ *
+ * @param args The args array.
+ * @param ac The argument count.
+ */
+static t_node *handle_invalid_args(char **args, int ac)
+{
+	if (ac == 2)
+		free_args(args);
+	error_exit();
+	return (NULL);
+}
 
 /**
  * @brief Checks if the given value already exists in the stack.
@@ -74,21 +87,22 @@ t_node *parse_args(int ac, char **av)
 	stack = NULL;
 	args = get_args(ac, av);
 	if (!args || !args[0])
-		return (free_args(args), error_exit(), NULL);
+		return (handle_invalid_args(args, ac));
 	i = 0;
-	while (args[i])
+	while (args[i]) // loop on each number of the argument 
 	{
 		if (!ft_atoi_safe(args[i], &num) || is_duplicate(stack, num))
 		{
+			// if convertion failed or if a duplicate has been detected, free and exit 
 			if (ac == 2)
-				free_args(args);
-			free_stack(stack);
-			error_exit();
+				free_args(args); // if params where "1 6 9 4...", free the allocated memory in ft_split
+			free_stack(stack); // free every node
+			error_exit();	   // Prints an error message to stderr and exits with code 1.
 		}
-		add_back(&stack, new_node(num));
+		add_back(&stack, new_node(num)); // create a new node and add it at the back of the linked list
 		i++;
 	}
 	if (ac == 2)
-		free_args(args);
+		free_args(args); // if params where "1 6 9 4...", free the allocated memory in ft_split
 	return (stack);
 }

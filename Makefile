@@ -11,14 +11,13 @@ LIBFT_DIR	= libft
 
 # Compiler & Flags
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -Iinclude -I$(LIBFT_DIR)/includes
+CFLAGS		= -Wall -Wextra -Werror -Iinclude -I$(LIBFT_DIR)/includes -g
 
 # Source files
 SRC_FILES	= \
 		main.c \
 		chunk_operations/generate_chunks.c \
 		chunk_operations/process_chunks.c \
-		chunk_operations/push_one_chunk.c \
 		indexing/normalize_stack.c \
 		memory_and_errors/error_exit.c \
 		memory_and_errors/free.c \

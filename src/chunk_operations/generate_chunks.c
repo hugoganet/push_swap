@@ -6,11 +6,26 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:41:52 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/25 15:33:56 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 15:11:51 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int get_chunk_count(int size)
+{
+	if (size <= 100)
+		return (5);
+	else if (size > 100 && size <= 200)
+		return (6);
+	else if (size > 200 && size <= 300)
+		return (7);
+	else if (size > 300 && size <= 400)
+		return (9);
+	else if (size > 400 && size <= 500)
+		return (11);
+	return (13);
+}
 
 /**
  * @brief Creates an array of chunks for a given stack size.

@@ -6,14 +6,14 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:21:55 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 14:30:44 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 10:35:04 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /**
- * Frees a NULL-terminated array of strings.
+ * @brief Frees the NULL-terminated array of strings malloced in ft_split()
  *
  * @param args The array of strings to free.
  */
