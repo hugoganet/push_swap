@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 17:45:17 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 13:53:54 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 15:50:33 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
  * @param value The integer value to store.
  * @return A pointer to the newly created node, or NULL on failure.
  */
-t_node *new_node(int value)
+t_node	*new_node(int value)
 {
-	t_node *node;
+	t_node	*node;
 
 	node = malloc(sizeof(t_node));
 	if (!node)
@@ -43,20 +43,17 @@ t_node *new_node(int value)
  * @param stack A pointer to the head of the stack (linked list).
  * @param new The node to add.
  */
-void add_back(t_node **stack, t_node *new)
+void	add_back(t_node **stack, t_node *new)
 {
-	t_node *temp;
+	t_node	*temp;
 
-	// if list is empty, new node is the first one
 	if (!*stack)
 	{
 		*stack = new;
-		return;
+		return ;
 	}
 	temp = *stack;
 	while (temp->next)
 		temp = temp->next;
 	temp->next = new;
 }
-
-

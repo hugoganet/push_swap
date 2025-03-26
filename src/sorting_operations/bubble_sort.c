@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 16:10:29 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 16:10:40 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 15:52:46 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@
  * @param arr The array to sort.
  * @param size Number of elements in the array.
  */
-void bubble_sort(int *arr, int size)
+void	bubble_sort(int *arr, int size)
 {
-	int i;
-	int temp;
-	int sorted;
+	int	i;
+	int	temp;
+	int	sorted;
 
 	sorted = 0;
 	while (!sorted)

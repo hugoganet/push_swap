@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 10:45:48 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 18:14:26 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 15:48:10 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
  *
  * @param stack A pointer to the head of stack A.
  */
-void ra(t_node **stack)
+void	ra(t_node **stack)
 {
-	t_node *first;
-	t_node *last;
+	t_node	*first;
+	t_node	*last;
 
 	if (!*stack || !(*stack)->next)
-		return;
+		return ;
 	first = *stack;
 	*stack = first->next;
 	last = *stack;
@@ -44,13 +44,13 @@ void ra(t_node **stack)
  *
  * @param stack A pointer to the head of stack A.
  */
-void rra(t_node **stack)
+void	rra(t_node **stack)
 {
-	t_node *prev;
-	t_node *last;
+	t_node	*prev;
+	t_node	*last;
 
 	if (!*stack || !(*stack)->next)
-		return;
+		return ;
 	prev = NULL;
 	last = *stack;
 	while (last->next)
@@ -69,13 +69,13 @@ void rra(t_node **stack)
  *
  * @param stack Pointer to the top of stack B.
  */
-void rb(t_node **stack)
+void	rb(t_node **stack)
 {
-	t_node *first;
-	t_node *last;
+	t_node	*first;
+	t_node	*last;
 
 	if (!*stack || !(*stack)->next)
-		return;
+		return ;
 	first = *stack;
 	*stack = first->next;
 	last = *stack;
@@ -91,13 +91,13 @@ void rb(t_node **stack)
  *
  * @param stack Pointer to the top of stack B.
  */
-void rrb(t_node **stack)
+void	rrb(t_node **stack)
 {
-	t_node *prev;
-	t_node *last;
+	t_node	*prev;
+	t_node	*last;
 
 	if (!*stack || !(*stack)->next)
-		return;
+		return ;
 	prev = NULL;
 	last = *stack;
 	while (last->next)

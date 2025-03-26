@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:21:55 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 14:30:44 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 16:07:20 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
  *
  * @param args The array of strings to free.
  */
-void free_args(char **args)
+void	free_args(char **args)
 {
-	int i;
+	int	i;
 
 	if (!args)
-		return;
+		return ;
 	i = 0;
 	while (args[i])
 	{
@@ -39,14 +39,14 @@ void free_args(char **args)
  *
  * @param stack The head of the stack (linked list).
  */
-void free_stack(t_node *stack)
+void	free_stack(t_node *stack)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	while (stack)
 	{
-		temp = stack->next; // Keep the pointer to the next node
-		free(stack);		// free the node
-		stack = temp;		// give the current node the value of the previous stack->next pointer
+		temp = stack->next;
+		free(stack);
+		stack = temp;
 	}
 }

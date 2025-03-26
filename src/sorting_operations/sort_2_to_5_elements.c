@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:16:20 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 15:15:23 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 15:52:29 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  * 
  * @param a A pointer to the stack to sort
  */
-void sort_two(t_node **a)
+void	sort_two(t_node **a)
 {
 	if ((*a)->value > (*a)->next->value)
 		sa(*a);
@@ -28,11 +28,11 @@ void sort_two(t_node **a)
  *
  * @param a A pointer to the stack to sort
  */
-void sort_three(t_node **a)
+void	sort_three(t_node **a)
 {
-	int first;
-	int second;
-	int third;
+	int	first;
+	int	second;
+	int	third;
 
 	first = (*a)->value;
 	second = (*a)->next->value;
@@ -55,17 +55,16 @@ void sort_three(t_node **a)
 		rra(a);
 }
 
-
 /**
  * @brief Sort a stack of 4 elements
  * 
  * @param a A pointer to the stack_a
  * @param b A pointer to the stack_b
  */
-void sort_four(t_node **a, t_node **b)
+void	sort_four(t_node **a, t_node **b)
 {
-	int min;
-	int pos;
+	int	min;
+	int	pos;
 
 	min = find_min_value(*a);
 	pos = find_position(*a, min);
@@ -78,9 +77,9 @@ void sort_four(t_node **a, t_node **b)
 	}
 	else if (pos == 3)
 		rra(a);
-	pb(a, b);	   // push smallest to B
-	sort_three(a); // sort remaining 3
-	pa(a, b);	   // bring back min
+	pb(a, b);
+	sort_three(a);
+	pa(a, b);
 }
 
 /**
@@ -89,10 +88,10 @@ void sort_four(t_node **a, t_node **b)
  * @param a A pointer to the stack_a
  * @param b A pointer to the stack_b
  */
-void sort_five(t_node **a, t_node **b)
+void	sort_five(t_node **a, t_node **b)
 {
-	int min;
-	int pos;
+	int	min;
+	int	pos;
 
 	min = find_min_value(*a);
 	pos = find_position(*a, min);
@@ -110,7 +109,7 @@ void sort_five(t_node **a, t_node **b)
 	}
 	else if (pos == 4)
 		rra(a);
-	pb(a, b);		 // push smallest to B
-	sort_four(a, b); // sort remaining 4
-	pa(a, b);		 // bring back min
+	pb(a, b);
+	sort_four(a, b);
+	pa(a, b);
 }

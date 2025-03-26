@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:21:31 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 18:03:23 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 15:51:12 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
  * 
  * @param stack The stack structure to search from
  */
-int find_min_value(t_node *stack)
+int	find_min_value(t_node *stack)
 {
-	int min;
+	int	min;
 
 	min = stack->value;
 	while (stack)
@@ -37,9 +37,9 @@ int find_min_value(t_node *stack)
  * @param stack The stack to search.
  * @return The maximum integer value found.
  */
-int find_max_value(t_node *stack)
+int	find_max_value(t_node *stack)
 {
-	int max;
+	int	max;
 
 	max = stack->value;
 	while (stack)
@@ -57,15 +57,15 @@ int find_max_value(t_node *stack)
  * @param stack The stack to search the target from
  * @param target The int to look for
  */
-int find_position(t_node *stack, int target)
+int	find_position(t_node *stack, int target)
 {
-	int pos;
+	int	pos;
 
 	pos = 0;
 	while (stack)
 	{
 		if (stack->value == target)
-			break;
+			break ;
 		pos++;
 		stack = stack->next;
 	}
@@ -77,9 +77,9 @@ int find_position(t_node *stack, int target)
  *
  * @param stack The stack to get the size of
  */
-int stack_size(t_node *stack)
+int	stack_size(t_node *stack)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	while (stack)

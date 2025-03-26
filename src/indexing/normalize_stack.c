@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 16:08:18 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/24 16:10:09 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 16:08:28 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@
  * @param value The value to search for.
  * @return The index of the value inside the array.
  */
-int find_index(int *sorted, int size, int value)
+int	find_index(int *sorted, int size, int value)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	while (i < size)
 	{
 		if (sorted[i] == value)
@@ -43,10 +44,11 @@ int find_index(int *sorted, int size, int value)
  * @param stack The stack to copy from.
  * @param arr The array to fill.
  */
-void fill_array_from_stack(t_node *stack, int *arr)
+void	fill_array_from_stack(t_node *stack, int *arr)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	while (stack)
 	{
 		arr[i++] = stack->value;
@@ -63,11 +65,11 @@ void fill_array_from_stack(t_node *stack, int *arr)
  *
  * @param stack The stack to normalize (stack A).
  */
-void normalize_stack(t_node *stack)
+void	normalize_stack(t_node *stack)
 {
-	int size;
-	int *values;
-	t_node *temp;
+	int		size;
+	int		*values;
+	t_node	*temp;
 
 	size = stack_size(stack);
 	values = malloc(sizeof(int) * size);

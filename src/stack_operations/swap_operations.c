@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 10:11:34 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/25 16:55:05 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 15:43:49 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
  *
  * @param stack A pointer to the head of stack A.
  */
-void sa(t_node *stack)
+void	sa(t_node *stack)
 {
-	int temp;
+	int	temp;
 
 	if (!stack || !stack->next)
-		return;
+		return ;
 	temp = stack->value;
 	stack->value = stack->next->value;
 	stack->next->value = temp;
@@ -38,12 +38,12 @@ void sa(t_node *stack)
  *
  * @param stack A pointer to the head of stack B.
  */
-void sb(t_node *stack)
+void	sb(t_node *stack)
 {
-	int temp;
+	int	temp;
 
 	if (!stack || !stack->next)
-		return;
+		return ;
 	temp = stack->value;
 	stack->value = stack->next->value;
 	stack->next->value = temp;
@@ -55,17 +55,17 @@ void sb(t_node *stack)
  * 
  * Does nothing if the stack has less than 2 elements
  */
-void ss(t_node *stack_a, t_node *stack_b)
+void	ss(t_node *stack_a, t_node *stack_b)
 {
-	int swapped;
-	int temp;
+	int	swapped;
+	int	temp;
 
 	swapped = 0;
 	if (stack_a && stack_a->next)
 	{
-		temp = stack_a->value; // store the value of the head
-		stack_a->value = stack_a->next->value; // set the value of the 1rst to the 2nd node
-		stack_a->next->value = temp; // set the value of the 2nd node to the previously 1rst
+		temp = stack_a->value;
+		stack_a->value = stack_a->next->value;
+		stack_a->next->value = temp;
 		swapped = 1;
 	}
 	if (stack_b && stack_b->next)
@@ -75,6 +75,6 @@ void ss(t_node *stack_a, t_node *stack_b)
 		stack_b->next->value = temp;
 		swapped = 1;
 	}
-	if (swapped) // check that at least one has been swapped
+	if (swapped)
 		write(1, "ss\n", 3);
 }

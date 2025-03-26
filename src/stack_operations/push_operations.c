@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 10:13:22 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/25 16:39:39 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 15:47:21 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@
  * @param a A pointer to stack A (source).
  * @param b A pointer to stack B (destination).
  */
-void pb(t_node **a, t_node **b)
+void	pb(t_node **a, t_node **b)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	if (!*a)
-		return;
-	tmp = *a; // tmp takes the head of A
-	*a = (*a)->next; // moves the head of A to the 2nd node
-	tmp->next = *b; // previous A head is pointing to B head
-	*b = tmp; // B head is set to previous A head
+		return ;
+	tmp = *a;
+	*a = (*a)->next;
+	tmp->next = *b;
+	*b = tmp;
 	write(1, "pb\n", 3);
 }
 
@@ -41,12 +41,12 @@ void pb(t_node **a, t_node **b)
  * @param a A pointer to stack A (destination).
  * @param b A pointer to stack B (source).
  */
-void pa(t_node **a, t_node **b)
+void	pa(t_node **a, t_node **b)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	if (!*b)
-		return;
+		return ;
 	tmp = *b;
 	*b = (*b)->next;
 	tmp->next = *a;

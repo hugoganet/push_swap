@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:21:13 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/21 15:21:15 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 16:04:03 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  * - allocation failure
  * - duplicate values
  */
-void error_exit(void)
+void	error_exit(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);

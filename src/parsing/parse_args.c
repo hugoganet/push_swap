@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:46:38 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/21 18:23:29 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 16:03:54 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
  * @param value The value to check for.
  * @return 1 if duplicate exists, 0 otherwise.
  */
-int is_duplicate(t_node *stack, int value)
+int	is_duplicate(t_node *stack, int value)
 {
 	while (stack)
 	{
@@ -46,7 +46,7 @@ int is_duplicate(t_node *stack, int value)
  * @param av Argument vector.
  * @return A NULL-terminated string array of tokens.
  */
-char **get_args(int ac, char **av)
+char	**get_args(int ac, char **av)
 {
 	if (ac == 2)
 		return (ft_split(av[1], ' '));
@@ -64,12 +64,12 @@ char **get_args(int ac, char **av)
  * @param av Argument values.
  * @return A pointer to the built stack (linked list).
  */
-t_node *parse_args(int ac, char **av)
+t_node	*parse_args(int ac, char **av)
 {
-	char **args;
-	int i;
-	int num;
-	t_node *stack;
+	char	**args;
+	int		i;
+	int		num;
+	t_node	*stack;
 
 	stack = NULL;
 	args = get_args(ac, av);

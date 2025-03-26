@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 17:29:09 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/21 17:29:12 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/26 15:54:08 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@
  * @param out Pointer to store the converted int if valid.
  * @return 1 if conversion is valid and stored in *out, 0 if invalid or overflow.
  */
-int ft_atoi_safe(char *str, int *out)
+int	ft_atoi_safe(char *str, int *out)
 {
-	int i;
-	int sign;
-	long result;
+	int		i;
+	int		sign;
+	long	result;
 
 	i = 0;
 	sign = 1;
@@ -42,7 +42,8 @@ int ft_atoi_safe(char *str, int *out)
 		if (str[i] < '0' || str[i] > '9')
 			return (0);
 		result = result * 10 + (str[i++] - '0');
-		if ((sign == 1 && result > INT_MAX) || (sign == -1 && -result < INT_MIN))
+		if ((sign == 1 && result > INT_MAX)
+			|| (sign == -1 && - result < INT_MIN))
 			return (0);
 	}
 	*out = (int)(result * sign);
