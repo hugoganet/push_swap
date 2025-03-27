@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:21:31 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/26 15:51:12 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/27 10:54:35 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,21 @@ int	stack_size(t_node *stack)
 		stack = stack->next;
 	}
 	return (size);
+}
+
+/**
+ * @brief Checks if a stack is already sorted in ascending order.
+ *
+ * @param stack The stack to check.
+ * @return 1 if sorted, 0 otherwise.
+ */
+int	is_sorted(t_node *stack)
+{
+	while (stack && stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }

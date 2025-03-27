@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:10:20 by hganet            #+#    #+#             */
-/*   Updated: 2025/03/26 17:17:38 by hganet           ###   ########.fr       */
+/*   Updated: 2025/03/27 11:29:01 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,14 @@ void	sb(t_node *stack);
 void	ss(t_node *stack_a, t_node *stack_b);
 
 // ##### sorting_operations #####
+	// sort_stack.c
+void	sort_stack(t_node **a, t_node **b);
 	// helper_functions.c
 int		find_min_value(t_node *stack);
 int		find_max_value(t_node *stack);
 int		find_position(t_node *stack, int target);
 int		stack_size(t_node *stack);
+int		is_sorted(t_node *stack);
 	// sort_2_to_5_elements.c
 void	sort_two(t_node **a);
 void	sort_three(t_node **a);

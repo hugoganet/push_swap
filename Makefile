@@ -26,6 +26,7 @@ SRC_FILES	= \
 		sorting_operations/bubble_sort.c \
 		sorting_operations/helper_functions.c \
 		sorting_operations/sort_2_to_5_elements.c \
+		sorting_operations/sort_stack.c \
 		stack_operations/push_operations.c \
 		stack_operations/rotate_both_stacks.c \
 		stack_operations/rotate_operations.c \
